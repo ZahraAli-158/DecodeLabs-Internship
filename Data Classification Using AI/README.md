@@ -1,5 +1,5 @@
 # Project: Data Classification Using AI
-**DecodeLabs — AI Agent Fellowship 2026**
+**DecodeLabs — AI Internship 2026**
 **Author:** Zahra | BS Artificial Intelligence | The University of Faisalabad
 
 ---
