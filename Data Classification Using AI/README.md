@@ -106,7 +106,3 @@ python project2_classification.py
 - Doosre classification algorithms (Logistic Regression, Decision Tree) se compare karna
 - Model ko completely naye/unseen data par test karna
 - Hyperparameter tuning ko `GridSearchCV` se aur automate karna
-
----
-
-**Badge Status:** Project 2 Complete ✅
