@@ -1,5 +1,5 @@
-# Project 3: AI Recommendation Logic
-**DecodeLabs — AI Agent Fellowship 2026**
+# Project: AI Recommendation Logic
+**DecodeLabs — AI Agent Internship 2026**
 **Author:** Zahra | BS Artificial Intelligence | The University of Faisalabad
 
 **Capstone:** Tech Stack Recommender
@@ -137,7 +137,3 @@ Agar user ki di gayi skills dataset ke vocabulary se bilkul match na karein (mat
 - Skills ko synonyms ke saath normalize karna (e.g. "ML" = "Machine Learning")
 - Collaborative filtering add karna jab enough user interaction data mil jaye
 - Web interface (Streamlit) banana taake user GUI se skills select kar sake
-
----
-
-**Badge Status:** Project 3 Complete ✅
