@@ -1,4 +1,3 @@
-````markdown
 # Project 4 — Image/Text Recognition (Basic)
 **DecodeLabs AI Industrial Training, Batch 2026 — Optional Mastery Phase**
 
