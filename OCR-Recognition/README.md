@@ -1,81 +1,146 @@
+````markdown
 # Project 4 — Image/Text Recognition (Basic)
 **DecodeLabs AI Industrial Training, Batch 2026 — Optional Mastery Phase**
 
-Ye project PDF mei diye gaye **Path 1: OCR** requirements ko fully implement karta hai using `pytesseract` (Tesseract engine). Maine khud test kar liya hai — pura pipeline working hai (test results neeche diye hain).
+This project fully implements the **Path 1: OCR** requirements provided in the PDF using `pytesseract` (Tesseract OCR engine). The complete pipeline has been tested successfully, and the test results are provided below.
 
 ## Files
-```
+```text
 ocr_project/
-├── generate_sample.py     # synthetic "messy" invoice image generator (noise+shadow+skew)
-├── ocr_pipeline.py         # MAIN script — ye hi Project 4 ka deliverable hai
+├── generate_sample.py     # Synthetic "messy" invoice image generator (noise + shadow + skew)
+├── ocr_pipeline.py        # MAIN script — Project 4 deliverable
 ├── sample_input/
-│   ├── messy_invoice.png   # sample 1: noisy/skewed invoice
-│   └── book_page.png       # sample 2: paragraph text (robustness test)
-└── outputs/                 # har run ke baad results yahan bante hain
-    ├── *_1_binary.png       # pre-processed (deskewed + adaptive thresholded) image
-    ├── *_2_confirmed.png    # visual confirmation: green box = accepted, red = rejected
-    ├── *_extracted.txt      # final extracted text
-    └── *_report.json        # full machine-readable report
-```
+│   ├── messy_invoice.png  # Sample 1: noisy/skewed invoice
+│   └── book_page.png      # Sample 2: paragraph text (robustness test)
+└── outputs/               # Generated results after each run
+    ├── *_1_binary.png     # Pre-processed (deskewed + adaptive thresholded) image
+    ├── *_2_confirmed.png  # Visual confirmation: green box = accepted, red = rejected
+    ├── *_extracted.txt    # Final extracted text
+    └── *_report.json      # Full machine-readable report
+````
 
 ---
 
-## Local machine pe setup kaise karna hai
+## Local Machine Setup
 
-### Step 1 — Tesseract OCR engine install karo (system-level, Python se alag)
-- **Windows:** UB-Mannheim ka Tesseract installer download karo (`https://github.com/UB-Mannheim/tesseract/wiki`), run karo. Default path: `C:\Program Files\Tesseract-OCR`. Agar PATH mei auto-add nahi hota, `ocr_pipeline.py` ke sabse upar ye line add kar dena:
+### Step 1 — Install Tesseract OCR Engine
+
+Tesseract is a **system-level dependency**, separate from Python.
+
+* **Windows:** Download and install the UB-Mannheim Tesseract installer from:
+  `https://github.com/UB-Mannheim/tesseract/wiki`
+
+  The default installation path is:
+  `C:\Program Files\Tesseract-OCR`
+
+  If Tesseract is not automatically added to PATH, add the following line at the top of `ocr_pipeline.py`:
+
   ```python
   pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
   ```
-- **Mac:** `brew install tesseract`
-- **Linux:** `sudo apt install tesseract-ocr`
 
-### Step 2 — Python libraries install karo
-Project folder ke andar terminal/CMD khol ke:
+* **Mac:**
+
+  ```bash
+  brew install tesseract
+  ```
+
+* **Linux:**
+
+  ```bash
+  sudo apt install tesseract-ocr
+  ```
+
+### Step 2 — Install Python Dependencies
+
+Open a terminal/CMD inside the project folder and run:
+
 ```bash
 pip install opencv-python pytesseract numpy pillow
 ```
 
-### Step 3 — Sanity check (bundled sample pe)
+### Step 3 — Run the Sanity Check
+
+Run the bundled sample:
+
 ```bash
 python ocr_pipeline.py
 ```
-Agar sab sahi hai toh terminal mei report print hoga aur last line `[GATE] PASSED` dikhegi. Agar `tesseract is not installed or it's not in your PATH` jaisi error aaye, Step 1 dobara dekho.
 
-### Step 4 — Apni khud ki image pe run karo
+If everything is configured correctly, the terminal will display the OCR report and the final line will show:
+
+```text
+[GATE] PASSED
+```
+
+If you receive an error such as `tesseract is not installed or it's not in your PATH`, verify the Tesseract installation from Step 1.
+
+### Step 4 — Run OCR on Your Own Image
+
 ```bash
 python ocr_pipeline.py path/to/your_image.png --psm sparse
 ```
-`--psm` options: `auto` (mixed layout), `block` (paragraph), `line` (single line — number plates/headers), `sparse` (invoices, scattered text).
 
-### Step 5 — Output verify karo
-`outputs/` folder mei 4 files banti hain har run pe — `*_2_confirmed.png` sabse zaroori hai defense ke liye (visually dikhata hai ke 80% gate kaam kar raha hai).
+Available `--psm` modes:
+
+* `auto` — Mixed or complex layouts
+* `block` — Paragraph/block text
+* `line` — Single-line text such as number plates or headers
+* `sparse` — Invoices and scattered text
+
+### Step 5 — Verify the Output
+
+Each run generates four output files inside the `outputs/` folder.
+
+The most important file for demonstration/defense is:
+
+```text
+*_2_confirmed.png
+```
+
+It provides a visual confirmation of the confidence gate:
+
+* **Green box** → Accepted text (confidence ≥ 80%)
+* **Red box** → Rejected text (confidence < 80%)
 
 ---
 
-## Maine khud test kiya — results
+## Test Results
 
-| Test | Input | PSM | Tokens detected | Tokens **accepted (≥80%)** | Avg confidence | Gate |
-|---|---|---|---|---|---|---|
-| 1 | messy_invoice.png (noisy, skewed) | sparse | 18–19 | 16–17 | 94.75–94.88% | PASS |
-| 2 | messy_invoice.png (same, block mode) | block | 20 | 17 | 93.41% | PASS |
-| 3 | book_page.png (4-line paragraph, noise+skew) | block | 28 | 28 | 94.39% | PASS |
-| 4 | missing/invalid file path | — | — | — | — | Clean error (exit code 1, no crash) |
+| Test | Input                                            | PSM    | Tokens Detected | Tokens **Accepted (≥80%)** | Avg. Confidence | Gate                                |
+| ---- | ------------------------------------------------ | ------ | --------------: | -------------------------: | --------------: | ----------------------------------- |
+| 1    | `messy_invoice.png` (noisy, skewed)              | sparse |           18–19 |                      16–17 |    94.75–94.88% | PASS                                |
+| 2    | `messy_invoice.png` (same input, block mode)     | block  |              20 |                         17 |          93.41% | PASS                                |
+| 3    | `book_page.png` (4-line paragraph, noise + skew) | block  |              28 |                         28 |          94.39% | PASS                                |
+| 4    | Missing/invalid file path                        | —      |               — |                          — |               — | Clean error (exit code 1, no crash) |
 
-Recognized text sample (Test 1): `INVOICE #0042 DATE: 2026-08-22 ITEM: SERVER RACK UNIT 3 TOTAL: $499.00 DECODELABS AI TRAINING KIT STATUS: PAID`
+### Recognized Text Sample
 
-Note: Test runs mei numbers thoda vary karte hain (16 vs 17 tokens) kyunki har baar naya random noise generate hota hai (`generate_sample.py` mei) — ye real-world camera/scan noise jaisa hi behavior hai, aur gate har baar consistently pass hua.
+Test 1 successfully recognized the following text:
 
-## PDF requirements ka mapping (Gatekeeper Rule, slide 17)
+```text
+INVOICE #0042 DATE: 2026-08-22 ITEM: SERVER RACK UNIT 3 TOTAL: $499.00 DECODELABS AI TRAINING KIT STATUS: PAID
+```
 
-| PDF Requirement | Kahan implement hua |
-|---|---|
-| **1. Library Integration** — error-free pytesseract usage | `run_ocr()` — `pytesseract.image_to_data()` se per-token text + confidence + bounding box |
-| **2. Pre-Processing Integrity** — grayscale + adaptive thresholding | `to_grayscale()` → `denoise()` → `deskew()` → `adaptive_threshold()` (true local/Gaussian adaptive, isliye uneven lighting mei bhi kaam karta hai) |
-| **3. Accuracy Benchmarking** — min 80% confidence | `CONFIDENCE_THRESHOLD = 80` + `filter_by_confidence()` |
-| **4. Visual Confirmation** — legible output with boxes/labels | `draw_confirmation()` — accepted = green box + label, rejected = red box |
+> **Note:** The exact token counts may vary slightly between test runs (for example, 16 vs. 17 accepted tokens) because `generate_sample.py` generates new random noise each time. This simulates real-world camera/scan noise, while the confidence gate consistently passes the test.
 
-Script ka exit code bhi gate ke hisaab se set hota hai (`0` = pass, `1` = bad input file, `2` = koi bhi token 80% clear na kare), taake ye kisi automated check/CI mei bhi drop-in ho sake.
+---
 
-## Path 2 (Object Detection) — kyun nahi banaya
-PDF mei clearly "OCR **or** Object Detection" likha tha (dono zaroori nahi). Path 1 pehle se hi sab 4 gates pass kar raha hai, isliye requirement fully complete hai. Path 2 (MobileNet-SSD) ke liye pre-trained `.caffemodel` weights internet se download karni padtin — agar bonus ke liye chahiye ho apne local machine pe, structure bata dena, code bana dungi.
+## PDF Requirements Mapping — Gatekeeper Rule (Slide 17)
+
+| PDF Requirement                                                     | Implementation                                                                                                                           |
+| ------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| **1. Library Integration** — Error-free `pytesseract` usage         | `run_ocr()` uses `pytesseract.image_to_data()` to extract per-token text, confidence scores, and bounding boxes                          |
+| **2. Pre-Processing Integrity** — Grayscale + adaptive thresholding | `to_grayscale()` → `denoise()` → `deskew()` → `adaptive_threshold()` using true local/Gaussian adaptive thresholding for uneven lighting |
+| **3. Accuracy Benchmarking** — Minimum 80% confidence               | `CONFIDENCE_THRESHOLD = 80` + `filter_by_confidence()`                                                                                   |
+| **4. Visual Confirmation** — Legible output with boxes/labels       | `draw_confirmation()` — accepted text is marked with green boxes, rejected text with red boxes                                           |
+
+The script also uses exit codes according to the validation gate:
+
+* `0` → Gate passed
+* `1` → Invalid or missing input file
+* `2` → No token meets the 80% confidence threshold
+
+This makes the OCR pipeline suitable for automated validation and CI environments.
+
+---
