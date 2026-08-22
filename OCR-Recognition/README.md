@@ -1,5 +1,4 @@
 # Project 4 — Image/Text Recognition (Basic)
-**DecodeLabs AI Industrial Training, Batch 2026 — Optional Mastery Phase**
 
 This project fully implements the **Path 1: OCR** requirements provided in the PDF using `pytesseract` (Tesseract OCR engine). The complete pipeline has been tested successfully, and the test results are provided below.
 
