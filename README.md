@@ -25,7 +25,11 @@ Mentor-Led Sessions — periodic guidance and feedback from Decode Labs mentors 
 
 ## Skills Gained
 • Practical AI/ML library integration (pytesseract, OpenCV, transfer-learning concepts)
+
 • Image pre-processing techniques: grayscale conversion, noise reduction, deskewing, adaptive thresholding
+
 • Confidence-based validation and benchmarking of model outputs
+
 • Structuring and documenting AI projects for real-world / portfolio use
+
 • Git & GitHub workflow for iterative project submission
