@@ -1,4 +1,4 @@
-Artificial Intelligence Internship — Decode Labs
+#Artificial Intelligence Internship — Decode Labs
 
 Intern: Zahra Ali Position: Artificial Intelligence (AI) Intern Department / Track: Artificial Intelligence (AI) Duration: 27 July 2026 – 27 August 2026 Mode of Work: Remote / Virtual Offered by: Decode Labs (decodelabs.tech)
 
