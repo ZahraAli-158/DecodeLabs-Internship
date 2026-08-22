@@ -1,0 +1,180 @@
+{
+  "input_image": "sample_input/messy_invoice.png",
+  "psm_mode": "block",
+  "skew_angle_deg": 1.37,
+  "otsu_cutoff": 189.0,
+  "confidence_threshold": 80,
+  "tokens_detected_total": 20,
+  "tokens_accepted": 17,
+  "tokens_rejected": 3,
+  "average_accepted_confidence": 93.41,
+  "accepted_tokens": [
+    {
+      "text": "INVOICE",
+      "confidence": 96.0,
+      "x": 53,
+      "y": 25,
+      "w": 152,
+      "h": 34
+    },
+    {
+      "text": "#0042",
+      "confidence": 96.0,
+      "x": 220,
+      "y": 34,
+      "w": 120,
+      "h": 32
+    },
+    {
+      "text": "DATE:",
+      "confidence": 96.0,
+      "x": 49,
+      "y": 92,
+      "w": 67,
+      "h": 23
+    },
+    {
+      "text": "2026-08-22",
+      "confidence": 96.0,
+      "x": 126,
+      "y": 97,
+      "w": 137,
+      "h": 26
+    },
+    {
+      "text": "ITEM:",
+      "confidence": 94.0,
+      "x": 46,
+      "y": 133,
+      "w": 64,
+      "h": 22
+    },
+    {
+      "text": "SERVER",
+      "confidence": 96.0,
+      "x": 119,
+      "y": 136,
+      "w": 93,
+      "h": 24
+    },
+    {
+      "text": "RACK",
+      "confidence": 96.0,
+      "x": 221,
+      "y": 142,
+      "w": 63,
+      "h": 22
+    },
+    {
+      "text": "UNIT",
+      "confidence": 96.0,
+      "x": 293,
+      "y": 146,
+      "w": 57,
+      "h": 22
+    },
+    {
+      "text": "3",
+      "confidence": 95.0,
+      "x": 105,
+      "y": 176,
+      "w": 13,
+      "h": 19
+    },
+    {
+      "text": "TOTAL:",
+      "confidence": 81.0,
+      "x": 41,
+      "y": 212,
+      "w": 82,
+      "h": 24
+    },
+    {
+      "text": "$499.00",
+      "confidence": 91.0,
+      "x": 134,
+      "y": 218,
+      "w": 97,
+      "h": 23
+    },
+    {
+      "text": "DECODELABS",
+      "confidence": 92.0,
+      "x": 38,
+      "y": 282,
+      "w": 162,
+      "h": 28
+    },
+    {
+      "text": "Al",
+      "confidence": 80.0,
+      "x": 209,
+      "y": 292,
+      "w": 23,
+      "h": 20
+    },
+    {
+      "text": "TRAINING",
+      "confidence": 95.0,
+      "x": 240,
+      "y": 293,
+      "w": 114,
+      "h": 25
+    },
+    {
+      "text": "KIT",
+      "confidence": 96.0,
+      "x": 364,
+      "y": 300,
+      "w": 38,
+      "h": 21
+    },
+    {
+      "text": "STATUS:",
+      "confidence": 96.0,
+      "x": 36,
+      "y": 322,
+      "w": 95,
+      "h": 24
+    },
+    {
+      "text": "PAID",
+      "confidence": 96.0,
+      "x": 142,
+      "y": 328,
+      "w": 52,
+      "h": 21
+    }
+  ],
+  "rejected_tokens": [
+    {
+      "text": "Qty:",
+      "confidence": 40.0,
+      "x": 44,
+      "y": 172,
+      "w": 50,
+      "h": 23
+    },
+    {
+      "text": "|",
+      "confidence": 52.0,
+      "x": 2,
+      "y": 229,
+      "w": 2,
+      "h": 4
+    },
+    {
+      "text": "a",
+      "confidence": 11.0,
+      "x": 0,
+      "y": 470,
+      "w": 424,
+      "h": 28
+    }
+  ],
+  "outputs": {
+    "binary_preprocessed_image": "outputs/messy_invoice_1_binary.png",
+    "visual_confirmation_image": "outputs/messy_invoice_2_confirmed.png",
+    "extracted_text_file": "outputs/messy_invoice_extracted.txt"
+  }
+}

@@ -1,0 +1,1 @@
+Artificial Intelligence is transforming how machines perceive the physical world around them. This is a sample paragraph used to test the OCR pipetine built for DecodeLabs Project 4.

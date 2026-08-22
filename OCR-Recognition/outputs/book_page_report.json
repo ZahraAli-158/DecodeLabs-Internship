@@ -1,0 +1,243 @@
+{
+  "input_image": "sample_input/book_page.png",
+  "psm_mode": "block",
+  "skew_angle_deg": 2.06,
+  "otsu_cutoff": 192.0,
+  "confidence_threshold": 80,
+  "tokens_detected_total": 28,
+  "tokens_accepted": 28,
+  "tokens_rejected": 0,
+  "average_accepted_confidence": 94.39,
+  "accepted_tokens": [
+    {
+      "text": "Artificial",
+      "confidence": 96.0,
+      "x": 40,
+      "y": 43,
+      "w": 89,
+      "h": 19
+    },
+    {
+      "text": "Intelligence",
+      "confidence": 95.0,
+      "x": 138,
+      "y": 44,
+      "w": 127,
+      "h": 23
+    },
+    {
+      "text": "is",
+      "confidence": 96.0,
+      "x": 273,
+      "y": 43,
+      "w": 17,
+      "h": 19
+    },
+    {
+      "text": "transforming",
+      "confidence": 96.0,
+      "x": 297,
+      "y": 43,
+      "w": 141,
+      "h": 24
+    },
+    {
+      "text": "how",
+      "confidence": 96.0,
+      "x": 447,
+      "y": 43,
+      "w": 43,
+      "h": 19
+    },
+    {
+      "text": "machines",
+      "confidence": 95.0,
+      "x": 41,
+      "y": 88,
+      "w": 105,
+      "h": 19
+    },
+    {
+      "text": "perceive",
+      "confidence": 96.0,
+      "x": 154,
+      "y": 88,
+      "w": 93,
+      "h": 24
+    },
+    {
+      "text": "the",
+      "confidence": 96.0,
+      "x": 254,
+      "y": 88,
+      "w": 36,
+      "h": 19
+    },
+    {
+      "text": "physical",
+      "confidence": 96.0,
+      "x": 298,
+      "y": 88,
+      "w": 89,
+      "h": 24
+    },
+    {
+      "text": "world",
+      "confidence": 96.0,
+      "x": 395,
+      "y": 88,
+      "w": 59,
+      "h": 19
+    },
+    {
+      "text": "around",
+      "confidence": 95.0,
+      "x": 463,
+      "y": 88,
+      "w": 76,
+      "h": 19
+    },
+    {
+      "text": "them.",
+      "confidence": 88.0,
+      "x": 547,
+      "y": 88,
+      "w": 63,
+      "h": 19
+    },
+    {
+      "text": "This",
+      "confidence": 96.0,
+      "x": 39,
+      "y": 134,
+      "w": 45,
+      "h": 18
+    },
+    {
+      "text": "is",
+      "confidence": 96.0,
+      "x": 93,
+      "y": 133,
+      "w": 16,
+      "h": 19
+    },
+    {
+      "text": "a",
+      "confidence": 96.0,
+      "x": 118,
+      "y": 139,
+      "w": 11,
+      "h": 13
+    },
+    {
+      "text": "sample",
+      "confidence": 96.0,
+      "x": 137,
+      "y": 134,
+      "w": 79,
+      "h": 23
+    },
+    {
+      "text": "paragraph",
+      "confidence": 95.0,
+      "x": 225,
+      "y": 133,
+      "w": 112,
+      "h": 24
+    },
+    {
+      "text": "used",
+      "confidence": 96.0,
+      "x": 346,
+      "y": 133,
+      "w": 51,
+      "h": 19
+    },
+    {
+      "text": "to",
+      "confidence": 96.0,
+      "x": 405,
+      "y": 135,
+      "w": 22,
+      "h": 17
+    },
+    {
+      "text": "test",
+      "confidence": 96.0,
+      "x": 434,
+      "y": 135,
+      "w": 43,
+      "h": 17
+    },
+    {
+      "text": "the",
+      "confidence": 96.0,
+      "x": 484,
+      "y": 133,
+      "w": 35,
+      "h": 19
+    },
+    {
+      "text": "OCR",
+      "confidence": 96.0,
+      "x": 527,
+      "y": 134,
+      "w": 47,
+      "h": 18
+    },
+    {
+      "text": "pipetine",
+      "confidence": 85.0,
+      "x": 41,
+      "y": 179,
+      "w": 86,
+      "h": 23
+    },
+    {
+      "text": "built",
+      "confidence": 95.0,
+      "x": 135,
+      "y": 179,
+      "w": 48,
+      "h": 18
+    },
+    {
+      "text": "for",
+      "confidence": 93.0,
+      "x": 190,
+      "y": 178,
+      "w": 31,
+      "h": 19
+    },
+    {
+      "text": "DecodeLabs",
+      "confidence": 91.0,
+      "x": 228,
+      "y": 178,
+      "w": 133,
+      "h": 19
+    },
+    {
+      "text": "Project",
+      "confidence": 96.0,
+      "x": 370,
+      "y": 178,
+      "w": 75,
+      "h": 24
+    },
+    {
+      "text": "4.",
+      "confidence": 83.0,
+      "x": 451,
+      "y": 179,
+      "w": 20,
+      "h": 18
+    }
+  ],
+  "rejected_tokens": [],
+  "outputs": {
+    "binary_preprocessed_image": "outputs/book_page_1_binary.png",
+    "visual_confirmation_image": "outputs/book_page_2_confirmed.png",
+    "extracted_text_file": "outputs/book_page_extracted.txt"
+  }
+}
