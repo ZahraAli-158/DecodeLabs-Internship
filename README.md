@@ -15,11 +15,11 @@ Mentor-Led Sessions — periodic guidance and feedback from Decode Labs mentors 
 
 ## Projects Completed
 
-| # | Project | Description | Status | Link |
-|---|---------|-------------|--------|------|
+| # | Project | Description 
+|---|---------|-------------|
 | 1 | **Rule-Based ChatBot** | Context-aware chatbot with personality and a Rock-Paper-Scissors mini-game, validated with automated tests 
 | 2 | **Data Classification Using AI** | Classification pipeline applying AI/ML techniques to categorize structured data 
-| 3 | **AI Recommendation** | Recommendation system project built as part of the internship track | Completed 
+| 3 | **AI Recommendation** | Recommendation system project built as part of the internship track  
 | 4 | **Image/Text Recognition (OCR)** | End-to-end OCR pipeline (pre-processing, adaptive thresholding, confidence-gated recognition, visual confirmation) built with ...
 
 
